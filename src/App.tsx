@@ -4,11 +4,12 @@ import { ThemeProvider } from "styled-components";
 
 import CustomButtonMolecule from "./components/molecules/CustomButton.molecule/CustomButton.molecule";
 import { useAppDispatch, useAppSelector } from "./hooks";
-import { ChangeTheme } from "./store/actions/ThemeStorage";
+import { ChangeLang, ChangeTheme } from "./store/actions/ThemeStorage";
 import { useEffect } from "react";
 
 function App() {
   const darkMode = useAppSelector((state) => state.ThemeS.darkMode);
+  const lang = useAppSelector((state) => state.ThemeS.lang);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -32,6 +33,11 @@ function App() {
           buttonFunc={() => dispatch(ChangeTheme())}
           names={["dark", "light"]}
           roundPosition={darkMode}
+        />
+         <ChangeThemeButton
+          buttonFunc={() => dispatch(ChangeLang())}
+          names={["ru", "eng"]}
+          roundPosition={lang}
         />
       </AppWrap>
     </ThemeProvider>

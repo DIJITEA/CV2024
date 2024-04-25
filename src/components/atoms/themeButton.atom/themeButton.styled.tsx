@@ -3,7 +3,6 @@ import {
   themeColor,
   themeColorReversed,
 } from "../../../default/styledComponents";
-import theme from "styled-theming";
 
 const colorChange = keyframes`
   from {  
@@ -16,11 +15,6 @@ const colorChange = keyframes`
     background-color: #fc8eac;
   }
 `;
-
-// export const themeRoundPosition = theme("mode", {
-//   light:  "calc(98% - 39px);",
-//   dark: "2%",
-// });
 
 const roundDirection = (direction: boolean) => {
   const roundAnimation = keyframes`
@@ -50,7 +44,6 @@ const StyledHeaderButton = styled.button<{
   $darkTheme?: boolean;
 }>`
   position: relative;
-  /* margin: 35px; */
   width: 150px;
   height: 50px;
   border-radius: 60px 60px 60px 60px / 60px 60px 60px 60px;
