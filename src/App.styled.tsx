@@ -6,11 +6,16 @@ const AppWrap = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${themeColor};
-  min-height: 100vh;
 `;
 const ContentWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  /* padding-bottom: 149px; */
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
 `;
-export { AppWrap, ContentWrap };
+
+const PrintPath = styled.div`
+  background-color: ${themeColor};
+`;
+
+export { AppWrap, ContentWrap, PrintPath };

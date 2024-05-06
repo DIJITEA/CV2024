@@ -16,10 +16,12 @@ const colorChange = keyframes`
   }
 `;
 
+const radius = `29px`;
+
 const roundDirection = (direction: boolean) => {
   const roundAnimation = keyframes`
   from {
-    right: ${direction ? "2%" : "calc(98% - 39px)"};
+    right: ${direction ? "2%" : `calc(98% - ${radius})`};
     
   }
   50%{
@@ -27,8 +29,8 @@ const roundDirection = (direction: boolean) => {
     width: 90%;
   }
   100% {
-    right: ${direction ? "calc(98% - 39px)" : "2%"};
-    width:39px;
+    right: ${direction ? `calc(98% - ${radius})` : "2%"};
+    width: ${radius};
   }
 `;
 
@@ -44,8 +46,9 @@ const StyledHeaderButton = styled.button<{
   $darkTheme?: boolean;
 }>`
   position: relative;
-  width: 150px;
-  height: 50px;
+  width: 140px;
+  height: 40px;
+  margin: 5px;
   border-radius: 60px 60px 60px 60px / 60px 60px 60px 60px;
   background-color: ${themeColorReversed};
   border: 4px solid #818181;
@@ -110,11 +113,11 @@ const StyledRound = styled.div<{
 }>`
   position: absolute;
   bottom: 50%;
-  right: ${(props) => (props.$roundPosition ? "2px" : "calc(98% - 39px)")};
+  right: ${(props) => (props.$roundPosition ? "2px" : `calc(98% - ${radius})`)};
   transform: translate(0%, 50%);
 
-  height: 39px;
-  width: 39px;
+  height: ${radius};
+  width: ${radius};
   border-radius: 50%;
   border-radius: 60px 60px 60px 60px / 60px 60px 60px 60px;
   background-color: ${themeColor};
